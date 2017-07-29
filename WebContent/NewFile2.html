@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ハンバーガー</title>
+ <link rel="stylesheet" type="text/css"  href="css/test.css">
+
+</head>
+<body>
+<a href="" id="btn">START</a>
+<style>
+.paper_body{
+float:left;
+overflow: hidden;
+-moz-perspective:2000px;
+-webkit-perspective:2000;
+-o-perspective:2000;
+-ms-perspective:2000;
+}
+.paper{
+opacity: 1;
+height:100%;
+width: 100%;
+-webkit-transform: rotateY(0deg);
+-ms-transform: rotateY(0deg);
+-o-transform: rotateY(0deg);
+transform: rotateY(0deg);
+-webkit-transform-origin: center left;
+-ms-transform-origin: center left;
+-o-transform-origin: center left;
+transform-origin: center left;
+}
+.activate .paper{
+opacity: 0;
+-webkit-transform: rotateY(120deg);
+-ms-transform: rotateY(120deg);
+-o-transform: rotateY(120deg);
+transform: rotateY(120deg);
+}
+</style>
+<script>
+var gridX = 4; // 横方向の分割数
+var gridY = 3; // 縦方向の分割数
+var colors = ['#1ABC9C','#2ECC71','#3498DB']; // パネルの色
+var total = 2600; // アニメーションの合計時間
+var pnum = gridX*gridY;
+var paperspeed = (total/1000)/pnum;
+function setting(){
+    winW = $(window).width();
+    winH = $(window).height();
+    gridW = (winW/gridX)/(winW/100);
+    gridH = (winH/gridY)/(winH/100);
+}
+$(function(){
+    setting();
+    $('body').append('<div class="paper_wrap"></div>');
+    for (var i = gridX*gridY - 1; i >= 0; i-) {
+        var col = colors[Math.floor(Math.random()*colors.length)];
+        var delay = i*paperspeed;
+        var html = '<div style="width:'+gridW+'%;height:'+gridH+'%;" class="paper_body"><div class="paper" style="background:'+col+';transition:all '+paperspeed+'s ease-out '+delay+'s;"></div></div>';
+        $('.paper_wrap').append(html);
+    };
+    $('#btn').on('click',function() {
+        // #btn をクリックでアニメーションが開始するように指定している。
+        $('html').addClass('activate');
+        setTimeout(function(){
+            $('.paper_wrap').fadeOut(300);
+        },total);
+        return false;
+    });
+});
+</script>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+</html>
