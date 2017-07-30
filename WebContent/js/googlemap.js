@@ -21,7 +21,7 @@ function initMap() {
  infoWindow = new google.maps.InfoWindow({ // 吹き出しの追加
         content: '<div class="map">ここでーす！！！</div>' // 吹き出しに表示する内容
   });
- marker.addListener('click', function() { // マーカーをクリックしたとき
+ marker.addListener('mouseover', function() { // マーカーをクリックしたとき
      infoWindow.open(map, marker); // 吹き出しの表示
     });
 }
