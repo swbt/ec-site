@@ -137,8 +137,8 @@ $(function () {
 		invertHoverEffect : false,
 		// フェードのスピードを設定
 		speed : {
-			fadeIn : 200,
-			fadeOut : 800
+			fadeIn : 500,
+			fadeOut : 700
 		}
 	});
 });
@@ -156,45 +156,52 @@ $('.menu').on('click', function() {
 	})
 });
 
-		//letterfxの部分
+//見本
 //$(function() {
-//	$(".spin").letterfx({
-//		"fx" : "fade fly-bottom",
-//		"backwards" : false,
-//		"timing" : 250,
-//		"fx_duration" : "1000ms",
-//		"letter_end" : "stay",
-//		"element_end" : "stay"
-//	});
-//});
-//$(function() {
-//	$("h1").letterfx({
-//		"fx" : "fade fly-top",
-//		"backwards" : false,
-//		"timing" : 250,
-//		"fx_duration" : "1000ms",
-//		"letter_end" : "stay",
-//		"element_end" : "stay"
+//	// 引き金となる要素を設定
+//	var triggerNode = $("h1");
+//	// 画面スクロール毎に判定を行う
+//	$(window).scroll(function(){
+//		// 引き金となる要素の位置を取得
+//		var triggerNodePosition = $(triggerNode).offset().top - $(window).height();
+//		// 現在のスクロール位置が引き金要素の位置より下にあれば‥
+//		if ($(window).scrollTop() > triggerNodePosition) {
+//			$("h1").letterfx({
+//				"fx" : "fade fly-bottom",
+//				"backwards" : false,
+//				"timing" : 250,
+//				"fx_duration" : "1000ms",
+//				"letter_end" : "stay",
+//				"element_end" : "stay"
+//			});
+//		};
 //	});
 //});
 
+//inviewとanimate_cssの部分
 $(function() {
-	// 引き金となる要素を設定
-	var triggerNode = $("h1");
-	// 画面スクロール毎に判定を行う
-	$(window).scroll(function(){
-		// 引き金となる要素の位置を取得
-		var triggerNodePosition = $(triggerNode).offset().top - $(window).height();
-		// 現在のスクロール位置が引き金要素の位置より下にあれば‥
-		if ($(window).scrollTop() > triggerNodePosition) {
-			$("h1").letterfx({
-				"fx" : "fade fly-bottom",
-				"backwards" : false,
-				"timing" : 250,
-				"fx_duration" : "1000ms",
-				"letter_end" : "stay",
-				"element_end" : "stay"
-			});
-		};
+	  $('.index').on('inview', function(event, isInView) {
+	    if (isInView) {
+	    //表示領域に入った時
+	      $(this).addClass('fadeInDown');
+	    } else {
+	    //表示領域から出た時
+      $(this).removeClass('fadeInDown');
+	      $(this).css('opacity',0); //非表示にしておく
+  }
+	  });
+	  $('.box2').on('inview', function(event, isInView) {
+	    if (isInView) {
+	      $(this).addClass('bounceIn');
+	    } else {
+	      $(this).removeClass('bounceIn');
+	    }
+	  });
+	  $('.box3').on('inview', function(event, isInView) {
+	    if (isInView) {
+	      $(this).addClass('lightSpeedIn');
+	    } else {
+	      $(this).removeClass('lightSpeedIn');
+	    }
+	  });
 	});
-});

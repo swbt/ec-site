@@ -74,6 +74,11 @@ img {
 	text-align:center;
 	margin:60px;
 }
+.js-trigger{
+	position: absolute; right: 20px;
+	font-size:20px;
+	border-bottom:dotted 3px #ffc778;
+}
 /* -------crossfadeのcss -------*/
 body {
 	margin: 0;
