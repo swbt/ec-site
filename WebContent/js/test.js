@@ -1,14 +1,7 @@
+
 var Login = {};
-
-/**
- * 超簡易ログイン認証
- *
- * @param loginForm
- *            formエレメント
- * @return 成功時true,失敗時false
- */
+/*超簡易ログイン認証*/
 Login.doLogin = function doLogin(loginForm) {
-
 	// 空チェック
 	if (loginForm.username.value == '') {
 		return Login.doError('ユーザー名を入力してください。');
@@ -16,17 +9,9 @@ Login.doLogin = function doLogin(loginForm) {
 	if (loginForm.password.value == '') {
 		return Login.doError('パスワードを入力してください。');
 	}
-
-	// エラーなし
 	return true;
 }
-/**
- * エラー時の動作
- *
- * @param msg
- *            エラーメッセージ
- * @return falseを返す
- */
+/*エラー時の動作*/
 Login.doError = function doError(msg) {
 	alert(msg);
 	return false;
@@ -34,33 +19,26 @@ Login.doError = function doError(msg) {
 
 //クッキーにて訪問数をカウント
 window.onload = function () {
-
     // クッキーに保存した訪問回数を取得し、変数「$count」に格納
     var $count = getCookie( 'sampleNumberOfVisits' );
-
     if( !$count ){ // 変数「$count」が空の場合の処理
         setCookie( 'sampleNumberOfVisits', 1, 1 );
     }else{ // 変数「$count」が空でない場合の処理
         setCookie( 'sampleNumberOfVisits', ++$count, 1 );
     }
-
     // 訪問回数を表示する関数を呼び出す
     displayCookie( 'sampleNumberOfVisits' );
 }
 
 // クッキーを設定する関数
 function setCookie( $cookieName, $cookieValue, $days ){
-
     // Dateオブジェクトを生成
     var $dateObject = new Date();
-
     // クッキーの有効期限を示すDateオブジェクトを生成
     $dateObject.setTime( $dateObject.getTime() + ( $days*24*60*60*1000 ) );
-
     // 有効期限をグリニッジ標準時に変換
     // 有効期限をクッキーに設定するための文字列を、変数「$expires」に代入
     var $expires = "expires=" + $dateObject.toGMTString();
-
     // 有効期限付きでクッキーを設定
     document.cookie = $cookieName + "=" + $cookieValue + "; " + $expires;
 }
@@ -84,26 +62,32 @@ function getCookie( $cookieName ){
     }
     return "";
 }
-
 // クッキーを削除する関数
 function deleteCookie( $cookieName ){
-
     // 過ぎた有効期限を設定することで削除できる
     document.cookie = $cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-
     // 訪問回数を表示する関数を呼び出す
     displayCookie( $cookieName );
 }
-
 // 訪問回数を表示する関数
 function displayCookie( $cookieName ){
-
     // クッキーに保存した訪問回数を取得
     var $cookieValue = getCookie( $cookieName );
-
     // 訪問回数を表示
     document.getElementById( 'sampleOutput' ).innerHTML = $cookieValue;
 }
+$(function(){
+	setTimeout(function(){
+		$('.banner js-example-1').remove('.banner js-example-1');
+		$(document).ready(function() {
+			$('body').fadeIn(3000);
+			},390);
+	});
+});
+//ロードしたらゆっくり表示させる
+$(document).ready(function() {
+$('body').fadeIn(2000);
+});
 
 //okvideo部分
 $(function(){
@@ -113,17 +97,27 @@ $(function(){
          loop: true,
     	 })
   });
+
 // crossfade部分
 $(function() {
 	// １つ目のsection
 	$('.js-example-1').crossfade({
-		threshold : 0.9
-	// フェードアウトの速さ
+		start : 'img/masumi2.jpg', // スタートの画像URLを指定
+		end : 'img/masumikura.jpg', // フェードアウトする画像URLを指定
+		threshold : 0.5,
+		backgroundPosition : 'center center' // 画像の位置
+
 	});
 	// ２つ目のsection
 	$('.js-example-2').crossfade({
-		start : 'img/Exterior_website.jpg', // スタートの画像URLを指定
-		end : 'img/home-right.jpg', // フェードアウトする画像URLを指定
+		start : 'img/kurahito2.jpg', // スタートの画像URLを指定
+		end : 'img/kawa.jpg', // フェードアウトする画像URLを指定
+		threshold : 0.5, // フェードアウトの速さ
+		backgroundPosition : 'center center' // 画像の位置
+	});
+	$('.js-example-3').crossfade({
+		start : 'img/hito.png', // スタートの画像URLを指定
+		end : 'img/masumi4.jpg', // フェードアウトする画像URLを指定
 		threshold : 0.5, // フェードアウトの速さ
 		backgroundPosition : 'center center' // 画像の位置
 	});
@@ -144,12 +138,12 @@ $(function () {
 });
 // ハンバーガーメニュー部分
 $('.menu').on('click', function() {
-	$('#navigation').fadeToggle(600);
+	$('#navigation').fadeToggle(700);
 	$('.navigation_item').css({
 		top : '30px',
 		opacity : 0
 	}).each(function(i) {
-		$(this).delay(400 * i).animate({
+		$(this).delay(700 * i).animate({
 			top : '0',
 			opacity : 1
 		}, 1500);
@@ -190,18 +184,59 @@ $(function() {
 	      $(this).css('opacity',0); //非表示にしておく
   }
 	  });
-	  $('.box2').on('inview', function(event, isInView) {
-	    if (isInView) {
-	      $(this).addClass('bounceIn');
-	    } else {
-	      $(this).removeClass('bounceIn');
-	    }
-	  });
-	  $('.box3').on('inview', function(event, isInView) {
-	    if (isInView) {
-	      $(this).addClass('lightSpeedIn');
-	    } else {
-	      $(this).removeClass('lightSpeedIn');
-	    }
-	  });
+	  $('.story_text').on('inview', function(event, isInView) {
+		    if (isInView) {
+		    //表示領域に入った時
+		      $(this).addClass('fadeInUp');
+		    } else {
+		    //表示領域から出た時
+	      $(this).removeClass('fadeInUp');
+		      $(this).css('opacity',0); //非表示にしておく
+	  }
+		  });
+	  $('.kerning_js').on('inview', function(event, isInView) {
+		    if (isInView) {
+		    //表示領域に入った時
+		      $(this).addClass('fadeIn');
+		    } else {
+		    //表示領域から出た時
+	      $(this).removeClass('fadeIn');
+		      $(this).css('opacity',0); //非表示にしておく
+	  }
+		  });
+	  $('.shop_info2').on('inview', function(event, isInView) {
+		    if (isInView) {
+		    //表示領域に入った時
+		      $(this).addClass('fadeInDown');
+		    } else {
+		    //表示領域から出た時
+	      $(this).removeClass('fadeInDown');
+		      $(this).css('opacity',0); //非表示にしておく
+	  }
+		  });
 	});
+
+//sliderの部分
+$(function() {
+    $(".center-item").slick({
+          infinite: true,
+          dots:false,
+          speed: 500,
+          slidesToShow: 4,
+          centerMode: true, //要素を中央寄せ
+          centerPadding:'100px', //両サイドの見えている部分のサイズ
+          autoplay:true, //自動再生
+  responsive: [{
+              breakpoint: 480,
+                   settings: {
+                        centerMode: false,
+              }
+         }]
+     });
+});
+var scene = document.getElementById('scene')
+//or, if you use jQuery
+var scene = $('#scene').get(0)
+
+var parallax = new Parallax(scene)
+
