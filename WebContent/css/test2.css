@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+body, div, span, a, p, img, ul, li, h1, h2, input, textarea {
+	margin: 0;
+	padding: 0;
+}
+* {
+	word-spacing: -2px;
+	letter-spacing: 2px;
+	font-weight: lighter;
+	/* 文章が長くなるところには入れる　
+	font-feature-settings : "palt" 1; */
+	font-family: 'Playfair Display', '本明朝-Book 新がな', HonMinSink-Book, '游明朝',
+		YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'ＭＳ 明朝',
+		'sans-serif';
+}
+div, a {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body{
+	background-color:#42f4f1;
+	/* display:none; */
+}
+a:focus {
+	outline: none;
+}
+img {
+	width: 100%;
+	height: auto;
+	border-style: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-user-drag: none;
+	user-drag: none;
+	pointer-events: none;
+}
+
+p{
+	color:black;
+}
+
+/* ここから商品一覧ページ */
+#nav{
+	width:910px;
+	height:60px;
+	margin:auto;
+}
+#nav li{
+	list-style:none;
+}
+#nav > ul > li{
+	position: relative;
+	float:left;
+	width:180px;
+	margin: 0 1px;
+}
+#nav > ul > li >a{
+	display:block;
+	height:55px;
+	background-color: #ffffff;
+	font-size:18px;
+	line-height:55px;
+	text-align:center;
+}
+li.color-blue{
+	border-top:5px solid #3fc6f3;
+}
+li.color-red{
+	border-top:5px solid #febd01;
+}
+ul.subs{
+	position:absolute;
+	top:100%;
+	width:180px;
+	background-color: #ffffff;
+}
+
+ul.subs li a{
+	display:block;
+	height:40px;
+	font-size:12px;
+	line-height:40px;
+	text-indent:22px;
+}
+li.color-blue ul.subs li a:hover{
+	background-color: #3fc6f3;
+	color:#fff;
+}
+li.color-red ul.subs li a:hover{
+	background-color: #46d7c6;
+	color:#fff;
+}
+ul.subs li{
+	position:rerative;
+}
+ul.subs li ul{
+	position:absolute;
+	top:0;
+	left:100%;
+	width:182px;
+}
+ul.subs li ul li a{
+	color:#fff;
+}
+li.color-blue ul.subs ul li a{
+	background-color:#ff625f;
+}
+li.color-red ul.subs ul li a{
+	background-color:#46d7c6;
+}
+li.color-blue ul.subs ul li:hover a{
+	background-color:#febd01;
+}
+li.color-red ul.subs ul li:hover a{
+	background-color:#3fc6f3;
+}
+ul.last li ul{
+	left:-182px;
+}
