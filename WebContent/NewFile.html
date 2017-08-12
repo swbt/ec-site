@@ -31,13 +31,19 @@
 <link rel="stylesheet" type="text/css" href="css/imagehover-min.css">
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/slick.css">
-<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+<link rel="stylesheet" type="text/css" href="css/toggles-full.css">
+<link rel="stylesheet" type="text/css" href="css/toggles-all.css">
+<link rel="stylesheet" type="text/css" href="css/animsition.css">
 </head>
 
 <header>
+
 	<div id="head">
-		<h1>森の風</h1>
+		<div id="logo"><img src="img/kaze-logo.jpg"></div>
+		<p class="logo_en">mori no kaze</p>
 	</div>
+	<a href="NewFile2.html" class="square_btn">お買い物はこちらへ</a>
+
 </header>
 <body>
 	<!-- メニュー部分 -->
@@ -79,15 +85,7 @@
 		</div>
 	</div>
 	<!-- 	slick(スライド写真)の部分 -->
-	<ul class="center-item">
-		<li><img src="img/sakura.jpg"></li>
-		<li><img src="img/sika.jpg"></li>
-		<li><img src="img/moya.png"></li>
-		<li><img src="img/naraaki.jpg"></li>
-		<li><img src="img/fuyusika.jpg"></li>
-		<li><img src="img/hito.jpg"></li>
-		<li><img src="img/natu.jpg"></li>
-	</ul>
+
 	<!-- 	田んぼ風景 -->
 	<div id="kome">
 		<img src="img/ricefield.jpg">
@@ -118,13 +116,25 @@
 		<p class="kerning">豊富なミネラル分</p>
 		<p class="kerning">金剛葛城山系/深層地下水</p>
 	</div>
+		<!-- 	slick(スライド写真)の部分 -->
+
+<div class="picture-main">
+	<ul class="center-item">
+		<li><img src="img/sakura.jpg"></li>
+		<li><img src="img/sika.jpg"></li>
+		<li><img src="img/moya.png"></li>
+		<li><img src="img/naraaki.jpg"></li>
+		<li><img src="img/fuyusika.jpg"></li>
+		<li><img src="img/hito.jpg"></li>
+		<li><img src="img/natu.jpg"></li>
+	</ul></div>
 
 	<!-- 	蔵人の写真 -->
 	<div id="omoi">
 		<img src="img/hito.png">
 	</div>
 	<!-- ここから想い -->
-	<div class="shop_text2 screle opa">
+	<div class="shop_text2">
 		<p>
 			<br>日本人の優しさ、繊細さ、豊かさの原点は、周囲を海に囲まれ四季に富んだ緑豊かな大自然の恩恵を一身に受け、<br>山里の動植物と共存共栄してきた生活の中に育まれてきました。<br>
 			このような自然観を原点に持つ先人たちによって、日本の食文化、麹文化の基礎が形成されました。<br>なかでも米を原料とし、世界に誇る高度な発酵技術を用いた清酒造りは、伝統民族酒にふさわしい品位、品格をそなえたものです。<br>
@@ -141,30 +151,19 @@
 		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- <script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/mootools/1.6.0/mootools.min.js"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiXNM76nC3et_K25OtIXlqFpiKD5KEEi8&callback=initMap"
 		async defer></script>
+		<script src="js/animsition.js"></script>
 	<script src="js/crossfade.js"></script>
 	<script src="js/googlemap.js"></script>
 	<script src="js/inview.js"></script>
 	<script src="js/letterfx.js"></script>
 	<script src="js/blackandwhite.js"></script>
-	<script src="js/moveTo.js"></script>
-	<script src="js/okvideo.js"></script>
-	<script src="js/slick.js"></script>
 	<script src="js/slick-min.js"></script>
-	<script src="js/parallax.js"></script>
 	<script src="js/test.js"></script>
+
 </body>
 
 <!-- ここからフッター -->
@@ -180,7 +179,7 @@
 	</div>
 	<div class="footer">
 		<p>© 2017 seiyatakahashi Inc.</p>
-		<a href="#" class="js-trigger">TOP</a>
+		<p class="pagetop"><a href="#head">TOP</a></p>
 	</div>
 
 </footer>

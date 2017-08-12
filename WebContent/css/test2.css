@@ -1,9 +1,11 @@
 @charset "utf-8";
 
+/* 共通部分のスタイルシート */
 body, div, span, a, p, img, ul, li, h1, h2, input, textarea {
 	margin: 0;
 	padding: 0;
 }
+
 * {
 	word-spacing: -2px;
 	letter-spacing: 2px;
@@ -14,20 +16,23 @@ body, div, span, a, p, img, ul, li, h1, h2, input, textarea {
 		YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'ＭＳ 明朝',
 		'sans-serif';
 }
+
 div, a {
 	box-sizing: border-box;
 }
+
 a {
 	text-decoration: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-body{
-	background-color:#42f4f1;
-	/* display:none; */
+
+body {
+	background-color: #FFFFFF;
 }
 a:focus {
 	outline: none;
 }
+
 img {
 	width: 100%;
 	height: auto;
@@ -41,85 +46,336 @@ img {
 	pointer-events: none;
 }
 
-p{
-	color:black;
+p {
+	text-align: center;
+	margin:20px;
 }
 
-/* ここから商品一覧ページ */
-#nav{
-	width:910px;
-	height:60px;
-	margin:auto;
+/*----------slickの部分----------*/
+/*左右の矢印の色を変える*/
+.slick-prev:before, .slick-next:before {
+	color: #000;
 }
-#nav li{
-	list-style:none;
+/*左右の矢印の位置を変える*/
+.slick-next {
+	right: 20px;
+	z-index: 99;
 }
-#nav > ul > li{
+
+.slick-prev {
+	left: 15px;
+	z-index: 100;
+}
+
+.slick-dots li.slick-active button:before, .slick-dots li button:before
+	{
+	color: #999;
+}
+
+.slick-prev:before {
+	color:#ffffff;
+	content: '<';
+}
+
+.slick-next:before {
+	color:#ffffff;
+	content: '>';
+}
+
+.picture-main {
+	height: 169px;
+	width: 900px;
+	margin: 0 auto;
+}
+
+.center-item {
+	  border-radius: 10%;
+    -moz-border-image: border-radius: 10%;
+    -webkit-border-image: border-radius: 10%;
+	width: 600px;
+	height: 169px;
+	margin: 0 auto;
+}
+
+.center-item img {
+	width: 100%;
+	height: 100%;
+}
+/* ここから商品メニュー */
+#nav {
 	position: relative;
-	float:left;
-	width:180px;
+	top: 400px;
+	width: 910px;
+	height: 60px;
+	margin: auto;
+}
+
+#nav li {
+	list-style: none;
+}
+
+#nav>ul>li {
+	position: relative;
+	float: left;
+	width: 180px;
 	margin: 0 1px;
 }
-#nav > ul > li >a{
-	display:block;
-	height:55px;
+
+#nav>ul>li>a {
+	display: block;
+	height: 55px;
 	background-color: #ffffff;
-	font-size:18px;
-	line-height:55px;
-	text-align:center;
-}
-li.color-blue{
-	border-top:5px solid #3fc6f3;
-}
-li.color-red{
-	border-top:5px solid #febd01;
-}
-ul.subs{
-	position:absolute;
-	top:100%;
-	width:180px;
-	background-color: #ffffff;
+	font-size: 18px;
+	line-height: 55px;
+	text-align: center;
 }
 
-ul.subs li a{
-	display:block;
-	height:40px;
-	font-size:12px;
-	line-height:40px;
-	text-indent:22px;
+li.color-blue {
+	border-top: 2px dotted #febd01;
+	border-bottom: 2px dotted #febd01;
 }
-li.color-blue ul.subs li a:hover{
+.color-blue a:hover {
+	color: #FFD700;
+}
+li.color-red {
+	border-top: 2px dotted #febd01;
+	border-bottom: 2px dotted #febd01;
+}
+.color-red a:hover {
+	color: #FFD700;
+}
+
+ul.subs {
+	position: absolute;
+	top: 100%;
+	width: 180px;
+	background-color: #FFFFF0;
+}
+
+ul.subs li a {
+	display: block;
+	height: 40px;
+	font-size: 12px;
+	line-height: 40px;
+	text-indent: 22px;
+}
+
+li.color-blue ul.subs li a:hover {
 	background-color: #3fc6f3;
-	color:#fff;
+	color: #fff;
 }
-li.color-red ul.subs li a:hover{
+
+li.color-red ul.subs li a:hover {
 	background-color: #46d7c6;
-	color:#fff;
+	color: #fff;
 }
-ul.subs li{
-	position:rerative;
+
+ul.subs li {
+	position: rerative;
 }
-ul.subs li ul{
-	position:absolute;
-	top:0;
-	left:100%;
-	width:182px;
+
+ul.subs li ul {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 182px;
 }
-ul.subs li ul li a{
-	color:#fff;
+
+ul.subs li ul li a {
+	color: #fff;
 }
-li.color-blue ul.subs ul li a{
-	background-color:#ff625f;
+
+li.color-blue ul.subs ul li a {
+	background-color: #ff625f;
 }
-li.color-red ul.subs ul li a{
-	background-color:#46d7c6;
+
+li.color-red ul.subs ul li a {
+	background-color: #46d7c6;
 }
-li.color-blue ul.subs ul li:hover a{
-	background-color:#febd01;
+
+li.color-blue ul.subs ul li:hover a {
+	background-color: #febd01;
 }
-li.color-red ul.subs ul li:hover a{
-	background-color:#3fc6f3;
+
+li.color-red ul.subs ul li:hover a {
+	background-color: #3fc6f3;
 }
-ul.last li ul{
-	left:-182px;
+
+ul.last li ul {
+	left: -182px;
 }
+/* ここから背景画面の部分(未定義) */
+/* #background {
+	z-index: -9999; 一番下のレイヤーにする
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#background img {
+	position: absolute;
+	top: 0;
+	left: 0;
+} */
+
+/* ここからヘッダー */
+#headerContainer {
+	height: 300px;
+	width: 100%;
+	padding: 8px 0;
+}
+.news{
+	margin:45px;
+}
+.news-head {
+	text-align: center;
+	margin: 0 auto;
+	width: 70px;
+	font-size: 23px;
+	position: relative;
+	padding: 0.3em;
+	margin-bottom:25px;
+}
+
+.news-head:after {
+content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 7px;
+	background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white
+		4px);
+
+
+}
+.header-left {
+	position: absolute;
+	left: 50px;
+}
+
+#logo {
+	width: 230px;
+	height: 230px;
+	margin: auto;
+	padding: 50px;
+}
+
+.logo_en {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 10px;
+	line-height: 18px;
+	letter-spacing: 3.5px;
+	color: #000000;
+}
+
+.inner-first {
+	width: 100%;
+	height: 50px;
+}
+
+#navigation {
+	position: fixed;
+	top: 70px;
+	right: 14px;
+	display: inline-block;
+	overflow: hidden;
+	z-index: 10;
+	border:dashed 1px #f7941d;
+}
+
+#navigation li {
+	list-style: none;
+	float: left;
+	margin: 10px;
+	color: #fff1c9;
+}
+
+#navigation li a {
+	font-size: 18px;
+	color: #FF7F50;
+}
+
+#navigation li:hover {
+	text-decoration: underline;
+	position: relative;
+	top: 3px;
+	left: 3px;
+}
+
+#navigation li a:hover {
+	/* color: #FFD700; */
+}
+/* ボディ */
+#head-line {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	width: 100%;
+}
+
+#main-contents {
+	width: 910px;
+	height: 1000px;
+}
+
+
+/* 商品一覧部分 */
+#main-contents{
+	display: table;
+}
+.lineup content{
+	width:910px;
+	/* margin:0 auto; */
+}
+.lineup content li{
+	width:50%;
+text-align:center;
+	display: table-cell;
+	display: inline-block;
+}
+/* フッター */
+footer {
+	width: 100%;
+	background-color:#FFFACD;
+	padding: 12px 0;
+}
+
+.inner {
+	margin: auto;
+	text-align:center;
+	}
+
+.pagetop {
+	position:fixed;
+	bottom: 24px;
+	right: 24px;
+	margin: 0 auto;
+	z-index: 200;
+}
+.pagetop a {
+	display: table-cell;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 20px;
+	line-height: 1;
+	border-radius: 50%;
+	background: #000;
+	behavior: url(PIE.htc);
+}
+
+.copyright {
+	color: #000000;
+	text-align: center;
+	font-size: 14px;;
+	margin: 0;
+}
+
+#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
