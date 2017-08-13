@@ -104,10 +104,10 @@ p {
 /* ここから商品メニュー */
 #nav {
 	position: relative;
-	top: 400px;
-	width: 910px;
+	top: 300px;
+	width: 930px;
 	height: 60px;
-	margin: auto;
+	margin:auto;
 }
 
 #nav li {
@@ -131,8 +131,8 @@ p {
 }
 
 li.color-blue {
-	border-top: 2px dotted #febd01;
-	border-bottom: 2px dotted #febd01;
+	border: 2px dotted #febd01;
+	/* border-bottom: 2px dotted #febd01; */
 }
 .color-blue a:hover {
 	color: #FFD700;
@@ -277,9 +277,7 @@ content: '';
 }
 
 #navigation {
-	position: fixed;
-	top: 70px;
-	right: 14px;
+	float:right;
 	display: inline-block;
 	overflow: hidden;
 	z-index: 10;
@@ -322,19 +320,7 @@ content: '';
 
 
 /* 商品一覧部分 */
-#main-contents{
-	display: table;
-}
-.lineup content{
-	width:910px;
-	/* margin:0 auto; */
-}
-.lineup content li{
-	width:50%;
-text-align:center;
-	display: table-cell;
-	display: inline-block;
-}
+
 /* フッター */
 footer {
 	width: 100%;
@@ -378,4 +364,4 @@ footer {
 #calendar {
 		max-width: 900px;
 		margin: 0 auto;
-	}
+}

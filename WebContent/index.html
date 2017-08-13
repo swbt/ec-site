@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index here</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="parent">
+
+		<div id="btn">
+			<a href="NewFile.html">ENTER</a>
+		</div>
+
+		<div class="inner-first">
+			<nav id="navigation">
+				<ul>
+					<li><a href="NewFile.html">奈良酒</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--四角バージョンのenter
+	 <div class="enter">
+		<a class="button" href="NewFile.html">ENTER</a>
+	</div> -->
+		<div id="video">
+			<iframe
+				src="https://player.vimeo.com/video/129901967?autoplay=1&loop=1&color=c9ff23&title=0&byline=0&portrait=0"
+				width="640" height="360" frameborder="0" webkitallowfullscreen
+				mozallowfullscreen allowfullscreen　allowtransparency="true"></iframe>
+		</div>
+	</div>
+	<script>
+		//ムービー全画面スクリプト（PC用）
+		//(1)動画の画角比率を設定します。4:3の場合はここを「4/3」に変更
+		var movieRatio = 16 / 9;
+		//(2)画像のリサイズ関数「movieAdjust()」を作成
+		function movieAdjust() {
+			var adjustWidth = $(window).width();
+			var adjustHeight = $(window).height();
+			if (adjustHeight > adjustWidth / movieRatio) {
+				adjustWidth = adjustHeight * movieRatio;
+			}
+			$('iframe').css({
+				width : (adjustWidth),
+				height : (adjustWidth / movieRatio)
+			});
+		}
+		//(3)画面リサイズ時と画面ロード時に関数movieAdjust()を実行
+		$(window).on('load resize', function() {
+			movieAdjust();
+		});
+	</script>
+
+</body>
+</html>
