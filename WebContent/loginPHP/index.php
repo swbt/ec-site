@@ -1,12 +1,12 @@
 <?php
 ob_start();
-// ここから、register.phpと同様
+// ここから、register.phpと同じく
 session_start();
 if( isset($_SESSION['user']) != "") {
 	header("Location: home.php");
 }
 include_once 'dbconnect.php';
-// ここまで、register.phpと同様
+// ここまで、register.phpと同じく
 ?>
 
 <?php
@@ -51,7 +51,6 @@ if(isset($_POST['login'])) {
 <meta http-equiv="refresh" content="240; url=https://www.google.co.jp">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ログイン機能</title>
-<!-- Bootstrap読み込み -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 </head>
 </head>
