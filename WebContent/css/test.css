@@ -285,7 +285,15 @@ img {
 	line-height:44px;
 	letter-spacing:2px;
 }
-
+.story_text {
+		-webkit-writing-mode:vertical-rl;
+		-ms-writing-mode:tb-rl;
+		writing-mode:vertical-rl;
+		-webkit-text-orientation:upright;
+  		-moz-text-orientation:upright;
+  		-ms-text-orientation:upright;
+  		text-orientation:upright;
+	}
 /*----------コンテンツ----------*/
  .contents {
 	width:100%;
