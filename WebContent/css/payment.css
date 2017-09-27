@@ -1,0 +1,27 @@
+th, td {
+	border: solid 1px #000000;
+	padding: 8px;
+}
+
+th {
+	text-align: center;
+	background-color: #FFFFE0;
+}
+
+.title {
+	padding: 10px;
+	margin-left: 28%;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+table {
+	margin-bottom: 60px;
+}
+
+#privacy p {
+	padding: 10px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+}

@@ -7,18 +7,107 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport"
-	content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="keywords" content="日本酒,販売,奈良,地酒">
 <meta name="description" content="当店は奈良の地酒をメインで取り扱っております">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- モバイル用のcss -->
+<link rel="stylesheet" media="(max-width: 640px)" href="css/mobile.css">
+<!-- パソコン用のcss -->
+<link rel="stylesheet" media="(min-width:640px)" href="css/style.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<body>
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 
+<!-- 日本酒全検索のオートコンプリート機能を追加 -->
+<script>
+	$(function() {
+		// 候補リストに表示するデータを配列で準備
+		var data = [ '楯野川 純米大吟醸 PHOENIX (フェニックス)', '隆 美山錦 純米吟醸 H28BY (神奈川)',
+				'八海山 特別純米原酒', '木戸泉 純米 秋あがり', '開運 純米 ひやおろし', '瀧自慢 神の穂 特別純米',
+				'惣誉 きもと特別純米酒ひやおろし', '澤屋まつもと 守破離 五百万石', 'いづみ橋 情熱 無ろ過純米',
+				'風の森 ALPHA TYPE1', ];
+
+		// オートコンプリート機能を適用
+		$('#txtKeywd').autocomplete({
+			source : data,
+			autoFocus : true,
+			delay : 200,
+			minLength : 1
+		});
+	});
+	//クッキーにて訪問数をカウント
+	window.onload = function() {
+		// クッキーに保存した訪問回数を取得し、変数「$count」に格納
+		var $count = getCookie('sampleNumberOfVisits');
+		if (!$count) { // 変数「$count」が空の場合の処理
+			setCookie('sampleNumberOfVisits', 1, 1);
+		} else { // 変数「$count」が空でない場合の処理
+			setCookie('sampleNumberOfVisits', ++$count, 1);
+		}
+		// 訪問回数を表示する関数を呼び出す
+		displayCookie('sampleNumberOfVisits');
+	}
+
+	// クッキーを設定する関数
+	function setCookie($cookieName, $cookieValue, $days) {
+		// Dateオブジェクトを生成
+		var $dateObject = new Date();
+		// クッキーの有効期限を示すDateオブジェクトを生成
+		$dateObject.setTime($dateObject.getTime()
+				+ ($days * 24 * 60 * 60 * 1000));
+
+		var $expires = "expires=" + $dateObject.toGMTString();
+		// 有効期限付きでクッキーを設定
+		document.cookie = $cookieName + "=" + $cookieValue + "; " + $expires;
+	}
+
+	// クッキーを取得する関数
+	function getCookie($cookieName) {
+
+		// 「;」区切りで分割し、配列「$cookies」に格納
+		var $cookies = document.cookie.split(';');
+
+		// クッキーの数だけループ
+		for (var $i = 0; $i < $cookies.length; $i++) {
+
+			// クッキーを「=」区切りで分割し、配列「$cookie」に格納
+			var $cookie = $cookies[$i].trim().split('=');
+
+			// クッキー名が仮引数「$cookieName」と同じであれば値を返す
+			if ($cookie[0] == $cookieName) {
+				return $cookie[1];
+			}
+		}
+		return "";
+	}
+	// クッキーを削除する関数
+	function deleteCookie($cookieName) {
+		// 過ぎた有効期限を設定することで削除できる
+		document.cookie = $cookieName
+				+ "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+		// 訪問回数を表示する関数を呼び出す
+		displayCookie($cookieName);
+	}
+	// 訪問回数を表示する関数
+	function displayCookie($cookieName) {
+		// クッキーに保存した訪問回数を取得
+		var $cookieValue = getCookie($cookieName);
+		// 訪問回数を表示
+		document.getElementById('sampleOutput').innerHTML = $cookieValue;
+	}
+</script>
+</head>
+
+<body>
 	<!-- コンテナ開始 -->
 	<div id="container">
+
 		<span> ようこそ！あなたは<span id="sampleOutput"></span>人目
 		</span>
 		<!-- ページ開始 -->
@@ -40,7 +129,7 @@
 
 				<div class="opening">
 					<h2>
-						<img src="img/sakeshop.jpg" alt="高橋商店トップ画像" width="840" height="260">
+						<img src="img/sakeshop.jpg" alt="高橋商店トップ画像">
 					</h2>
 				</div>
 
@@ -55,9 +144,9 @@
 				<hr class="none">
 			</div>
 
+
 			<!-- コンテンツ開始 -->
 			<div id="content">
-
 				<!-- メインカラム開始 -->
 				<div id="main">
 
@@ -100,7 +189,8 @@
 						<h2>当店の配送について</h2>
 						<p>クール宅急便での配送となります</p>
 						<p>
-							この内容関するご詳細は、<a href="http://www.kuronekoyamato.co.jp/ytc/customer/">配送会社のホームページをご参照ください。</a>
+							この内容関するご詳細は、<a
+								href="http://www.kuronekoyamato.co.jp/ytc/customer/">配送会社のホームページをご参照ください。</a>
 						</p>
 					</div>
 
@@ -113,29 +203,40 @@
 					</div>
 
 				</div>
-				<!-- メインカラム終了 -->
+				<!-- メイン終了 -->
 
 
 				<!-- サイドバー開始 -->
 				<div id="nav">
+
 					<div class="section emphasis">
-						<h2>ピックアップ</h2>
+						<h2>新商品情報</h2>
 						<p>
-							<a href="#">季節限定商品が入荷致しました。</a>
+							<a href="#">季節限定商品</a>が入荷致しました。
 						</p>
 						<p>どうぞお試しください</p>
 					</div>
 
+<!-- google custom searchの代わりとして配置 -->
+					<div class="section emphasis">
+						<h2>日本酒ラインナップ</h2>
+						<p>該当する商品を検索できます<br>
+							<input id="txtKeywd" type="search" size="26" />
+						</p>
+					</div>
 					<div class="section strong">
 						<h2>お支払い方法</h2>
 						<p>
-							<a href="#">クレジットカード・代金引換・銀行振込よりお選びいただけます。</a>
+							クレジットカード・<br>代金引換・銀行振込より<br>お選びいただけます。
 						</p>
-						<p>ピックアップコンテンツに関する簡単な説明をここに記載。</p>
 					</div>
 
 					<div class="section normal">
 						<h2>営業日</h2>
+						<p><iframe
+							src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ja.japanese%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo"
+							style="border-width: 0" width="200" height="200" frameborder="0"
+							scrolling="no"></iframe></p>
 					</div>
 
 					<div class="section normal contact">
@@ -150,7 +251,6 @@
 						</p>
 					</div>
 				</div>
-
 				<hr class="clear">
 			</div>
 
@@ -181,12 +281,16 @@
 		<!-- ページ終了 -->
 	</div>
 	<!-- コンテナ終了 -->
+	<!-- <script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.2/jquery.autocomplete.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/1.6.2/jquery.mockjax.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="js/gcal.min.js"></script>
-	<script src="js/fullcalendar.min.js"></script>
-	<script src="js/sub2.js"></script>
+	-->
 </body>
 </html>

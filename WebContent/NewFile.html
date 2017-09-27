@@ -6,8 +6,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="robots" content="noindex,nofollow">
 <meta name="format-detection" content="telephone=no">
+<meta name="author" content="takahashi">
 <meta name="viewport"
-	content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="keywords" content="日本酒,販売,奈良,地酒,酒蔵">
 <meta name="description" content="森の風は、奈良県御所市にある日本酒を作る酒蔵です。">
 
@@ -23,17 +24,19 @@
 <link rel="shortcut icon" href="img/kaze.png">
 <link rel="icon" href="favicon.ico" type="img/kaze.png" />
 <!-- ここからcssのリンク -->
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display"
-	rel="stylesheet">
-<link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css"
-	rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="css/test.css">
-<link rel="stylesheet" type="text/css" href="css/imagehover-min.css">
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<link rel="stylesheet" type="text/css" href="css/slick.css">
-<link rel="stylesheet" type="text/css" href="css/toggles-full.css">
-<link rel="stylesheet" type="text/css" href="css/toggles-all.css">
-<link rel="stylesheet" type="text/css" href="css/animsition.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Playfair+Display">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" />
+<link rel="stylesheet" href="css/test.css">
+<link rel="stylesheet" href="css/imagehover-min.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/slick.css">
+<link rel="stylesheet" href="css/toggles-full.css">
+<link rel="stylesheet" href="css/toggles-all.css">
+<link rel="stylesheet" href="css/animsition.css">
+<!-- レスポンシブ化のcss -->
+<!-- <link rel="stylesheet" media="(max-width: 640px)" href="test2.css"> -->
 </head>
 
 <header>
@@ -149,12 +152,11 @@
 		<img src="img/main_1.jpg">
 	</div>
 
-	<!-- jquery・javascriptのリンク -->
+	<!-- jquery・javascript(JQueryプラグイン別に分けています) -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiXNM76nC3et_K25OtIXlqFpiKD5KEEi8&callback=initMap"
 		async defer></script>
@@ -181,11 +183,10 @@
 		</div>
 	</div>
 	<div class="footer">
-		<p>© 2017 seiyatakahashi Inc.</p>
-		<p class="pagetop">
-			<a href="#head">TOP</a>
-		</p>
-	</div>
+		<p>© 2017 seiyatakahashi Inc.</p></div>
 
+		<div id="back-to-top"><a href="#"><img src="img/goToTop.png"></a>
+	</div>
+	<div id="pos" style="position: fixed; left: 5px; bottom: 5px"></div>
 </footer>
 </html>

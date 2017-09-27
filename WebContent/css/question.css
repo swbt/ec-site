@@ -1,0 +1,20 @@
+th, td {
+	border: solid 1px #000000;
+	padding: 10px;
+}
+
+th {
+	text-align: center;
+	background-color: #FFFFE0;
+}
+
+.title {
+	padding: 10px;
+	margin-left: 30%;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+table {
+	margin-bottom: 70px;
+}

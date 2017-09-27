@@ -2,15 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index here</title>
-<link rel="stylesheet" type="text/css" href="css/index.css">
+<title>index</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="takahashi">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="keywords" content="日本酒,販売,奈良,地酒,酒蔵">
+<meta name="description" content="森の風は、奈良県御所市にある日本酒を作る酒蔵です。">
+
+<link rel="stylesheet" href="css/index.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
 	<div id="parent">
-
 		<div id="btn">
 			<a href="NewFile.html">ENTER</a>
 		</div>
@@ -18,14 +26,10 @@
 		<div class="inner-first">
 			<nav id="navigation">
 				<ul>
-					<li><a href="NewFile.html">日本酒</a></li>
+					<li><a href="NewFile.html"></a></li>
 				</ul>
 			</nav>
 		</div>
-		<!--四角バージョンのenter
-	 <div class="enter">
-		<a class="button" href="NewFile.html">ENTER</a>
-	</div> -->
 
 		<div id="video">
 			<iframe
@@ -36,10 +40,7 @@
 	</div>
 
 	<script>
-		//ムービー全画面スクリプト（PC用）
-		//(1)動画の画角比率を「4/3」に設定
 		var movieRatio = 16 / 9;
-		//(2)画像のリサイズ関数「movieAdjust()」を作成
 		function movieAdjust() {
 			var adjustWidth = $(window).width();
 			var adjustHeight = $(window).height();
@@ -51,7 +52,6 @@
 				height : (adjustWidth / movieRatio)
 			});
 		}
-		//(3)画面リサイズ時と画面ロード時に関数movieAdjust()を実行
 		$(window).on('load resize', function() {
 			movieAdjust();
 		});

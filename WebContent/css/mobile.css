@@ -1,0 +1,404 @@
+@media screen and (max-width:640px) {
+	 @charset "utf-8";
+
+	/* --- 全体の背景・テキスト --- */
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: #f9f9f9;
+		color: #000000;
+		font-size: 80%;
+	}
+	a {
+		text-decoration: none;
+		color: #000000;
+	}
+	/* --- 全体のリンクテキスト --- */
+	a:link {
+		color: #0000ff;
+	}
+	a:visited {
+		color: #000090;
+	}
+	a:hover {
+		color: #ff8000;
+	}
+	a:active {
+		color: #ff0000;
+	}
+	.title {
+		text-align: center;
+	}
+	/* --- コンテナ --- */
+	#container {
+		width: 100%;
+		margin: 0 auto;
+		background-color: #ffffff;
+		border-left: 1px #c0c0c0 solid;
+		border-right: 1px #c0c0c0 solid;
+	}
+	#container span {
+		display: none;
+	}
+	/* --- ページ --- */
+	#page {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	/* --- ▼ヘッダ内の設定開始 --- */
+
+	/* --- ヘッダ --- */
+	#header {
+		position: relative;
+		width: 100%;
+		margin: 0 0 20px;
+		padding: 10px 0 0;
+	}
+
+	/* --- サイトタイトル --- */
+	#header h1.siteTitle, #header p.siteTitle {
+		margin: 0 0 3px;
+		font-size: 200%;
+	}
+	/* サイトタイトル内のリンク */
+	#header h1.siteTitle a, #header p.siteTitle a {
+		text-decoration: none;
+		color: #000000;
+	}
+
+	/* --- キャッチフレーズ --- */
+	#header p.catch {
+		margin: 0 0 10px;
+	}
+	#header p.catch strong {
+		font-weight: normal;
+	}
+
+	/* --- ガイドメニュー --- */
+	#header ul.guide {
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		float: left;
+	}
+	/* メニュー項目 */
+	#header ul.guide li {
+		display: inline-block;
+		padding: 0 4px 0 8px;
+	}
+	/* 最初の項目 */
+	#header ul.guide li.first {
+		background: none;
+	}
+
+	/* --- オープニングエリア（トップページ） --- */
+	#header div.opening {
+		margin-bottom: 2px;
+	}
+	/* オープニングエリア内の見出し */
+	#header div.opening h2 {
+		margin: 0;
+	}
+
+	/* --- ヘッダメニュー --- */
+	#header ul.nl {
+		width: 16%;
+		 margin : 0;
+		padding: 0;
+		list-style-type: none;
+		text-align: center;
+		margin: 0;
+	}
+	/* メニュー項目 */
+	#header ul.nl li {
+		width: 100%;
+		line-height: 100%;
+	}
+	/* リンクエリア */
+	#header ul.nl li a {
+		display: block;
+		position: relative;
+		padding: 15px 2px;
+		border: 1px #cccccc;
+		border-style: solid solid solid none;
+		text-decoration: none;
+	}
+	/* 最初のリンクエリア */
+	#header ul.nl li.first a {
+		border-left: 1px #cccccc solid;
+	}
+	/* ポイント時の設定 */
+	#header ul.nl li a:hover {
+		background-color: #f0ffff;
+		text-decoration: underline;
+	}
+	/* --- トピックパス（下層ページ） --- */
+	#header ol.topicPath {
+		margin: 0;
+		padding: 7px 2px;
+		border-bottom: 1px #c0c0c0 solid;
+		list-style-type: none;
+	}
+	/* リスト項目 */
+	#header ol.topicPath li {
+		display: inline;
+	}
+	/* リンクエリア */
+	#header ol.topicPath li a {
+		padding-right: 12px;
+		background: url(../image/topic_path.gif) no-repeat right;
+	}
+	/* --- 罫線 --- */
+	#header hr.none {
+		display: none;
+	}
+
+	/* --- ▲ヘッダ内の設定終了 --- */
+	.opening img {
+		width: 100%;
+		height: auto;
+	}
+
+	/* --- ▼コンテンツ内の設定開始 --- */
+
+	/* --- コンテンツ --- */
+	#content {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	/* --- ▼メインカラム内の設定開始 --- */
+
+	/* --- メインカラム --- */
+	#main {
+		width: 100%;
+	}
+
+	/* --- ページタイトル（下層ページ） --- */
+	#main h1.pageTitle {
+		margin: 0 0 15px 20px;
+		padding: 8px 10px;
+		background-color: #e0e0e0;
+		font-size: 160%;
+	}
+
+	/* --- セクション（共通設定） --- */
+	#main div.section {
+		margin: auto;
+	}
+
+	/* --- 標準セクション --- */
+	/* 見出し */
+	#main div.normal h2 {
+		margin: 0 0 1em;
+		padding: 5px 8px;
+		background-color: #e0e0e0;
+		font-size: 130%;
+	}
+	/* 段落 */
+	#main div.normal p {
+		margin: 0 5px 1em;
+		line-height: 160%;
+	}
+
+	/* --- 強調セクション --- */
+	#main div.emphasis {
+		padding: 1.1em 15px 0;
+		border: 1px #c0c0c0 solid;
+	}
+	/* 見出し */
+	#main div.emphasis h2 {
+		margin: 0 0 0.8em;
+		font-size: 130%;
+		color: #ff8000;
+	}
+	/* 段落 */
+	#main div.emphasis p {
+		margin: 0 0 1em;
+		line-height: 150%;
+	}
+
+	/* --- 新着情報（トップページ） --- */
+	#main div.update dl {
+		width: 100%;
+		margin: 0 auto;
+	}
+	/* 日付エリア */
+	#main div.update dt {
+		width: 6.7em;
+		float: left;
+		padding: 7px 0 6px 3px;
+		line-height: 120%;
+	}
+	/* 本文エリア */
+	#main div.update dd {
+		margin: 0;
+		padding: 7px 3px 6px 6.6em;
+		border-bottom: 1px #c0c0c0 dotted;
+		line-height: 120%;
+	}
+
+	/* --- ▲メインカラム内の設定終了 --- */
+
+	/* --- ▼サイドバー内の設定開始 --- */
+
+	/* --- サイドバー --- */
+	#nav {
+		width: 100%;
+	}
+	/* --- セクション（共通設定） --- */
+	#nav div.section {
+		margin-bottom: 15px;
+	}
+	/* 見出し */
+	#nav div.section h2 {
+		margin: auto;
+		padding: 5px 8px;
+		font-size: 120%;
+	}
+	/* 段落 */
+	#nav div.section p {
+		margin: 0 10px 0.7em;
+		line-height: 130%;
+		white-space: nowrap;
+	}
+
+	/* --- 標準セクション（グレー） --- */
+	#nav div.normal {
+		border: 1px #c0c0c0 solid;
+	}
+	/* 見出し */
+	#nav div.normal h2 {
+		background-color: #e0e0e0;
+	}
+
+	/* --- 強調セクション1（水色） --- */
+	#nav div.emphasis {
+		border: 1px #92c2dc solid;
+	}
+	/* 見出し */
+	#nav div.emphasis h2 {
+		background-color: #a7dcfc;
+	}
+
+	/* --- 強調セクション2（オレンジ） --- */
+	#nav div.strong {
+		border: 1px #f4c24d solid;
+	}
+	/* 見出し */
+	#nav div.strong h2 {
+		background-color: #ffce68;
+	}
+
+	/* --- サブメニュー --- */
+	/* サブメニュー内の見出し */
+	#nav div.subMenu h2 {
+		margin: 0; /* 見出しのマージン（上書き） */
+		background-color: #a7dcfc;
+		border: 1px #92c2dc solid;
+	}
+	/* メニューエリア */
+	#nav div.subMenu ul.nl {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	/* メニュー項目 */
+	#nav div.subMenu ul.nl li {
+		border-bottom: 1px #c0c0c0 solid;
+	}
+	/* リンクエリア */
+	#nav div.subMenu ul.nl li a {
+		display: block;
+		position: relative;
+		padding: 9px 10px;
+		text-decoration: none;
+	}
+	/* ポイント時の設定 */
+	#nav div.subMenu ul.nl li a:hover {
+		background-color: #f0ffff;
+		text-decoration: underline;
+	}
+
+	/* --- お問い合わせ --- */
+	#nav div.contact {
+		padding: 0 0 0.3em;
+	}
+	/* お問い合わせ内の段落 */
+	#nav div.contact p {
+		margin: 0 10px 0.4em;
+	}
+	.section normal p {
+		margin: auto;
+	}
+	/* --- ▲サイドバー内 --- */
+
+	/* --- 罫線 --- */
+	#content hr.clear {
+		width: 100%;
+		margin: 0;
+	}
+
+	/* --- ▲コンテンツ内の設定終了 --- */
+
+	/* --- ▼フッタ内の設定開始 --- */
+
+	/* --- フッタ --- */
+	#footer {
+		background-color: #f2f6fc;
+		padding: 15px 0 20px;
+		border-top: 1px #c0c0c0 solid;
+		padding: 15px 0 20px;
+	}
+
+	/* --- フッタメニュー --- */
+	#footer ul.nl {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		text-align: center;
+	}
+	/* --- メニュー項目 --- */
+	#footer ul.nl li {
+		padding: 0 2px 0 8px;
+		display: inline-block;
+	}
+	/* 最初の項目 */
+	#footer ul.nl li.first {
+		background-image: none;
+	}
+	/* ガイドメニュー */
+	#footer ul.guide {
+		margin: 0 0 15px;
+	}
+
+	/* --- アドレス・コピーライト --- */
+	#footer address {
+		font-style: normal;
+		text-align: center;
+		line-height: 140%;
+	}
+	#calendar {
+		margin: 0 auto;
+	}
+
+	/* --- ▲フッタ内の設定終了 --- */
+
+	/* --- ▼その他の設定開始 --- */
+
+	/* --- clearfix --- */
+	.clearFix:after {
+		content: ".";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+	.clearFix {
+		min-height: 1px;
+	}
+}
