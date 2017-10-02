@@ -1,20 +1,3 @@
-//var Login = {};
-///*超簡易ログイン認証*/
-//Login.doLogin = function doLogin(loginForm) {
-//	// 空チェック
-//	if (loginForm.username.value == '') {
-//		return Login.doError('ユーザー名を入力してください。');
-//	}
-//	if (loginForm.password.value == '') {
-//		return Login.doError('パスワードを入力してください。');
-//	}
-//	return true;
-//}
-///*エラー時の動作*/
-//Login.doError = function doError(msg) {
-//	alert(msg);
-//	return false;
-//}
 
 //ロードしたらゆっくり表示させる
 //jQuery(document).ready(function(){
@@ -70,7 +53,7 @@ $(function() {
 		backgroundPosition : 'center center' // 画像の位置
 	});
 });
-//ブラックアンドホワイト部分
+//blackAndWhite部分
 $(function () {
 	$('.bwWrapper').BlackAndWhite({
 		// エフェクト有無を設定
@@ -84,7 +67,7 @@ $(function () {
 		}
 	});
 });
-// メニュー部分
+// menu部分
 $('.menu').on('click', function() {
 	$('#navigation').fadeToggle(700);
 	$('.navigation_item').css({
@@ -104,7 +87,7 @@ $('.menu').on('click', function() {
 });
 
 
-//inviewとanimate_cssの部分
+//inview・animate_cssの部分
 $(function() {
 	  $('.index').on('inview', function(event, isInView) {
 	    if (isInView) {
@@ -148,7 +131,7 @@ $(function() {
 		  });
 	});
 
-//slickの部分
+//slick部分
 $(function() {
     $(".center-item").slick({
           infinite: true,
@@ -177,12 +160,11 @@ var scene = $('#scene').get(0)
 
 var parallax = new Parallax(scene)
 
-//top画面に戻る動作の記述
+//top画面に戻る動作
 $(function() {
     // #back-to-topを消す
     $('#back-to-top').hide();
 
-    // スクロールが十分されたら#back-to-topを表示、スクロールが戻ったら非表示
     $(window).scroll(function() {
         $('#pos').text($(this).scrollTop());
         if ($(this).scrollTop() > 120) {
@@ -196,7 +178,7 @@ $(function() {
     $('#back-to-top a').click(function() {
         $('body').animate({
             scrollTop:0
-        }, 500);
+        }, 1200);
         return false;
     });
 });

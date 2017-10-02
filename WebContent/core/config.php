@@ -1,5 +1,5 @@
 <?php
 $host = "localhost";
 $username = "root";
-$password = "root";
+$password = "rootroot";
 $dbname = "register_func";
