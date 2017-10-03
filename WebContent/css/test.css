@@ -40,6 +40,7 @@ img {
 	user-drag: none;
 	pointer-events: none;
 }
+/*---------header---------*/
 header{
 	height:340px;
 }
@@ -64,14 +65,19 @@ header{
 .square_btn:hover {
     background: #fffbef;
 }
-/*----------crossfadeのcss----------*/
+#head{
+	height:100px;
+	text-aligh:center;
+}
+#head p{
+	text-align:center;
+	font-family: 'Hiragino Mincho ProN',sans-serif;
+}
+/*----------crossfade----------*/
 body {
-	margin: 0;
-	padding: 0;
 	line-height: 1.5;
 	color: #555;
 }
-
 .banner {
 	position: relative;
 	color: white;
@@ -101,13 +107,13 @@ section {
 .center {
 	text-align: center;
 }
-/*----------blackAndWhite部分----------*/
+
+/*----------blackAndWhite----------*/
 .bwWrapper {
     position:relative;
     display:block;
-    ma
 }
-/*----------メニューアイコン部分----------*/
+/*----------メニューアイコン----------*/
 .menu {
 	margin:40px 0px 0px 40px;
 	position:fixed;
@@ -119,7 +125,6 @@ section {
 	z-index: 99999;
 	box-sizing: border-box;
 }
-
 .menu  span {
 	display: inline-block;
 	transition: all .4s;
@@ -131,15 +136,12 @@ section {
 	background-color: #333;
 	margin: 0 auto;
 }
-
 .menu  span:nth-of-type(1) {
 	top: 0;
 }
-
 .menu  span:nth-of-type(2) {
 	top: 9px;
 }
-
 .menu  span:nth-of-type(3) {
 	bottom: 0;
 }
@@ -154,29 +156,24 @@ section {
 	background-color: #fff;
 	z-index: 99998;
 }
-
 #navigation .navigation_inner {
 	display: table;
 	width: 100%;
 	height: 100%;
 }
-
 #navigation .navigation_inner .navigation_menu {
 	display: table-cell;
 	vertical-align: middle;
 }
-
 #navigation .navigation_inner .navigation_menu .navigation_item {
 	width: 300px;
 	height: 40px;
 	margin: 16px auto 0 auto;
 }
-
 #navigation .navigation_inner .navigation_menu .navigation_item:first-child
 	{
 	margin-top: 0;
 }
-
 #navigation .navigation_inner .navigation_menu .navigation_item a {
 	display: block;
 	position: relative;
@@ -186,11 +183,10 @@ section {
 	line-height: 40px;
 	text-align: center;
 }
-
 li {
 	list-style: none;
 }
-/*----------slickの部分----------*/
+/*----------slick----------*/
 /*左右の矢印の色を変える*/
 .slick-prev:before,
 .slick-next:before {
@@ -232,18 +228,6 @@ img {
 	float: left;
     width:100%;
     height:100%;
-}
-
-
-
-/*----------ヘッダー部分----------*/
-#head{
-	height:100px;
-	text-aligh:center;
-}
-#head p{
-	text-align:center;
-	font-family: 'Hiragino Mincho ProN',sans-serif;
 }
 /*----------story(蔵について)----------*/
 #story {
@@ -295,7 +279,7 @@ img {
   		-ms-text-orientation:upright;
   		text-orientation:upright;
 	}
-/*----------コンテンツ----------*/
+/*----------contents----------*/
  .contents {
 	width:100%;
 	height:auto;
@@ -324,8 +308,7 @@ img {
 	letter-spacing:3px;
 	color:#003811;
 }
-/*----------米・水・想いの部分----------*/
-
+/*----------shop(米・水・想い)----------*/
 .shop_text {
 	width:100%;
 	height:auto;
@@ -372,7 +355,7 @@ img {
 .shop_info > p:nth-child(1) {
 	border-left:1px solid rgba(0,56,17,1);
 }
-@media (max-width:640px){
+/@media (max-width:640px){
 	#shop .contents_img div { background-image:url(../img/contents_img1s.jpg); }
 	.shop_img { height:130px; margin:0 0 55px 0; }
 	.shop_img ul { height:100% !important; }
@@ -396,10 +379,7 @@ img {
 	.lb-nav a.lb-prev { background-position:15px center !important; }
 	.lb-nav a.lb-next { background-position:100px center !important; }
 }
-
-
-
-/*----------アクセス----------*/
+/*----------access----------*/
 footer{
 	margin-top:120px;
 }
@@ -432,8 +412,7 @@ footer p{
 	width:100%;
 	height:400px;
 }
-/* pageTop */
-
+/*----------pagetop----------*/
 #back-to-top{
 	position:fixed;
 	right:5px;
