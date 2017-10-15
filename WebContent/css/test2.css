@@ -6,6 +6,8 @@ body, div, span, a, p, img, ul, li, h1, h2, input, textarea {
 	padding: 0;
 }
 * {
+	-webkit-overflow-scrolling: touch ;
+	/* overflow: scroll ; */
 	word-spacing: -2px;
 	letter-spacing: 1px;
 	font-weight: lighter;
@@ -48,17 +50,16 @@ header{
 	width:125px;
 	height:125px;
 	margin:auto;
-	padding:25px;
+	padding:50px;
 }
 .square_btn {
 	position: absolute;
-	top:40px;
-	right:10px;
+	top:0px;
+	right:0px;
     display: inline-block;
-    padding: 0.5em 1em;
     text-decoration: none;
     color: #67c5ff;
-    border: double 4px #67c5ff;
+    border: double 0.5px #67c5ff;
     border-radius: 5px;
     transition: .4s;
 }
@@ -81,10 +82,10 @@ body {
 .banner {
 	position: relative;
 	color: white;
-	margin-bottom: 50px;
-	height: 560px;
-	background
-	#333;
+	margin-bottom:　0px;
+	width:100%;
+	height: 400px;
+	background:#333;
 }
 .banner h1 {
 	position: absolute;
@@ -124,7 +125,7 @@ section {
 	z-index: 99999;
 	box-sizing: border-box;
 }
-.menu  span {
+.menu span {
 	display: inline-block;
 	transition: all .4s;
 	box-sizing: border-box;
@@ -135,10 +136,10 @@ section {
 	background-color: #333;
 	margin: 0 auto;
 }
-.menu  span:nth-of-type(1) {
+.menu span:nth-of-type(1) {
 	top: 0;
 }
-.menu  span:nth-of-type(2) {
+.menu span:nth-of-type(2) {
 	top: 9px;
 }
 .menu  span:nth-of-type(3) {
@@ -236,14 +237,18 @@ img {
 	z-index:9;
 }
 #story .contents_inner {
-	padding-bottom:75px;
+	width:100%;
+	padding-bottom:45px;
+}
+.story_text h1{
+	display:none;
 }
 .story_text {
-	width:525px;
-	height:380px;
-	margin:100px 0 0 -285px;
+	width:530px;
+	height:390px;
+	margin:50px 0 0 -285px;
     position:relative;
-    left:50%;
+    left:35%;
 }
 .story_text p {
 	color:#003811;
@@ -251,10 +256,10 @@ img {
 }
 .story_text > p:nth-child(1),.story_text > p:nth-child(2) {
 	height:330px;
-	padding:10px 0 0 0;
-	font-size:24px;
+	padding:30px 0 0 0;
+	font-size:20px;
 	line-height:60px;
-	letter-spacing:4px;
+	letter-spacing:2px;
 	border-left:1px solid rgba(0,56,17,1);
 	white-space:nowrap;
 }
@@ -262,12 +267,12 @@ img {
 	border-right:1px solid rgba(0,56,17,1);
 }
 .story_text > p:nth-child(3) {
-	height:370px;
-	margin:0 50px 0 0;
-	padding:10px 0 0 0;
-	font-size:18px;
-	line-height:44px;
-	letter-spacing:2px;
+	height:390px;
+	margin:0 25px 0 0;
+	padding:0;
+	font-size:16px;
+	line-height:30px;
+	letter-spacing:5px;
 }
 .story_text {
 		-webkit-writing-mode:vertical-rl;
@@ -304,7 +309,7 @@ img {
 	font-size:34px;
 	line-height:34px;
 	text-align:center;
-	letter-spacing:3px;
+	letter-spacing:0px;
 	color:#003811;
 }
 /*----------shop(米・水・想い)----------*/
