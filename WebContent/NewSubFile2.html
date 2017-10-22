@@ -11,9 +11,11 @@
 <meta name="keywords" content="日本酒,販売,奈良,地酒">
 <meta name="description" content="当店は奈良の地酒をメインで取り扱っております">
 
-<!-- モバイル用のcss -->
+<!-- mobile用のcss -->
 <link rel="stylesheet" media="(max-width: 640px)" href="css/mobile.css">
-<!-- パソコン用のcss -->
+<!-- pc用のcss -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 <link rel="stylesheet" media="(min-width:640px)" href="css/style.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,6 +25,7 @@
 	src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type="text/javascript"
 	src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
 
 <!-- 日本酒全検索のオートコンプリート機能を追加 -->
 <script>
@@ -41,6 +44,7 @@
 			minLength : 1
 		});
 	});
+
 	//クッキーにて訪問数をカウント
 	window.onload = function() {
 		// クッキーに保存した訪問回数を取得し、変数「$count」に格納
@@ -135,9 +139,9 @@
 
 				<ul class="nl clearFix">
 					<li class="first"><a href="NewSubFile2.html">ホーム</a></li>
-					<li><a href="#">日本酒</a></li>
-					<li><a href="#">限定商品</a></li>
-					<li><a href="#">その他お酒</a></li>
+					<li><a href="NewProducts.html">日本酒</a></li>
+					<li><a href="NewProducts.html">限定商品</a></li>
+					<li><a href="NewProducts.html">その他お酒</a></li>
 					<li><a href="NewCompany.html">会社案内</a></li>
 					<li><a href="NewInquiry.html">お問い合わせ</a></li>
 				</ul>
@@ -217,11 +221,12 @@
 						<p>どうぞお試しください</p>
 					</div>
 
-<!-- google custom searchの代わりとして配置 -->
+					<!-- google custom searchの代わりとして配置 -->
 					<div class="section emphasis">
 						<h2>日本酒ラインナップ</h2>
-						<p>該当する商品を検索できます<br>
-							<input id="txtKeywd" type="search" size="26" />
+						<p>
+							当店の商品を検索できます<br> <input id="txtKeywd" type="search"
+								size="26" />
 						</p>
 					</div>
 					<div class="section strong">
@@ -233,10 +238,12 @@
 
 					<div class="section normal">
 						<h2>営業日</h2>
-						<p><iframe
-							src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ja.japanese%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo"
-							style="border-width: 0" width="200" height="200" frameborder="0"
-							scrolling="no"></iframe></p>
+						<p>
+							<iframe
+								src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ja.japanese%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FTokyo"
+								style="border-width: 0" width="200" height="200" frameborder="0"
+								scrolling="no"></iframe>
+						</p>
 					</div>
 
 					<div class="section normal contact">
@@ -256,7 +263,6 @@
 
 			<!-- フッタ開始 -->
 			<div id="footer">
-
 				<ul class="nl">
 					<li class="first"><a href="NewSubFile2.html">ホーム</a></li>
 					<li><a href="NewSubFile2.html">ご利用ガイド</a></li>
@@ -272,15 +278,14 @@
 				</ul>
 
 				<address>
-					東京都世田谷区0-0-0 〇〇ビル10F TEL 03-0000-0000 <br> Copyright (C) 2017
+					東京都〇〇区0-0-0 〇〇ビル10F TEL 03-0000-0000 <br> Copyright (C) 2017
 					高橋商店. All Rights Reserved.
 				</address>
 			</div>
 
 		</div>
-		<!-- ページ終了 -->
 	</div>
-	<!-- コンテナ終了 -->
+
 	<!-- <script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.2/jquery.autocomplete.min.js"></script>
 	<script

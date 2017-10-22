@@ -10,6 +10,7 @@
 	content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <meta name="keywords" content="日本酒,販売,奈良,地酒">
 <meta name="description" content="当店は奈良の地酒をメインで取り扱っております">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 <link rel="stylesheet" media="(max-width: 640px)" href="css/mobile.css">
 <style>
 .header {
@@ -29,6 +30,30 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<div id="container">
+		<!-- ヘッダ開始 -->
+		<div id="header">
+			<h1 class="siteTitle">高橋商店</h1>
+			<p class="catch">
+				<strong>こだわり選りすぐりの地酒を取り揃えました</strong>
+			</p>
+
+			<ul class="guide">
+				<li class="first"><a href="NewQuestion.html">FAQ</a></li>
+				<li><a href="NewCompany.html#access">アクセス</a></li>
+				<li><a href="NewSubFile2.html">サイトマップ</a></li>
+			</ul>
+
+			<ul class="nl clearFix">
+				<li class="first"><a href="NewSubFile2.html">ホーム</a></li>
+				<li><a href="NewProducts.html">日本酒</a></li>
+				<li><a href="NewProducts.html">限定商品</a></li>
+				<li><a href="#">その他お酒</a></li>
+				<li><a href="NewCompany.html">会社案内</a></li>
+				<li><a href="NewInquiry.html">お問い合わせ</a></li>
+			</ul>
+			<hr class="none">
+		</div>
 	<div class="header">
 		<div class="row">
 			<div class="col-sm-offset-3 span9">
@@ -127,7 +152,7 @@
 		</ul>
 
 		<address>
-			東京都世田谷区0-0-0 〇〇ビル10F TEL 03-0000-0000 <br> Copyright (C) 2017
+			東京都〇〇区0-0-0 〇〇ビル10F TEL 03-0000-0000 <br> Copyright (C) 2017
 			高橋商店. All Rights Reserved.
 		</address>
 	</div>
@@ -148,7 +173,7 @@
 					pref : '#pref',
 					addr : '#addr'
 				});
-				// jQuery Validation Plugin の Twitter BootStrap 3 対応
+
 				$.validator
 						.setDefaults({
 							highlight : function(element) {
@@ -169,7 +194,7 @@
 								}
 							}
 						});
-				// jQuery Validation Plugin の適用
+				// jQuery Validation Plugin
 				$('#form')
 						.validate(
 								{
@@ -188,7 +213,7 @@
 										}
 									},
 									/**
-									 * バリデーションメッセージの設定
+									 * バリデーションメッセージ
 									 */
 									messages : {
 										last_name : "姓を入力してください。",
